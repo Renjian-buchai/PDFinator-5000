@@ -32,3 +32,11 @@ def convert(inputPath: Path, inputFormat: str, outputPath: Path, outputFormat: s
     if Path.is_file(inputPath):
         inputFormat = (Path(inputPath).suffix)[1:]
         convertFile(inputPath, inputFormat, outputPath, outputFormat)
+    else:
+        files: list[Path] = []
+        for file in Path.iterdir(inputPath):
+            if file.suffix[1:].lower() == inputFormat:
+                files.append(file)
+
+        for file in files:
+            convertFile(file, inputFormat, outputPath, outputFormat)
