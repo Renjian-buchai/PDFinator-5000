@@ -1,8 +1,11 @@
 def help():
     print(
         """
-usage: python main.py [options] <path/to/input> -of <output_format>
-       python main.py --help
+usage:  python main.py [-o <path/to/output/>] <path/to/input> 
+            -of <output_format>
+        python main.py [-o <path/to/output/>] [-if <input_format>] 
+            <path/to/input/> -of <output_format>
+        python main.py --help
        
   options:
     -if <input_format>  Input format. If not provided, input will be inferred
@@ -11,7 +14,7 @@ usage: python main.py [options] <path/to/input> -of <output_format>
                         format.
     -of <output_format> Output format. Must be one of the accepted formats
                         listed below.
-    -o <path/to/output> Output path. In the absence of this option, the files
+    -o <path/to/output/> Output path. In the absence of this option, the files
                         will be dumped in the current working directory.
     --help              Shows help menu; i.e., this menu.
 
